@@ -39,13 +39,13 @@ Each letter of the input is mapped to its NATO phonetic equivalent using a prede
 ```
 NATO-Phonetic-App/
 ├── nato_phonetic_alphabet_app_gui.py  # Main application script
-└── README.md                           # Project documentation
+├── README.md                           # Project documentation
+└── LICENSE                             # Project license (MIT)
 ```
 
 ## 📸 Screenshot
 
 <img width="638" height="338" alt="image" src="https://github.com/user-attachments/assets/d314307c-4662-421f-818a-d23e7451dc0f" />
-
 
 ## 🗺️ NATO Phonetic Alphabet Reference
 
