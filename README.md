@@ -1,6 +1,6 @@
 # NATO Phonetic Alphabet App
 
-A simple Python desktop application that converts a user-inputted word into its NATO phonetic alphabet equivalent using a graphical user interface (GUI) built with Tkinter.
+A simple Python GUI application that converts typed words into the NATO Phonetic Alphabet and speaks them aloud using text-to-speech.
 
 ## 🔤 What It Does
 
@@ -8,16 +8,32 @@ This app takes a word entered by the user and translates each letter into its co
 For example:  
 **HELLO** → `H - Hotel | E - Echo | L - Lima | L - Lima | O - Oscar`
 
-## 🖥️ Features
+## 🔤 Features
 
-- Intuitive and responsive GUI using Tkinter
-- Converts letters to NATO phonetic alphabet in real-time
-- Ignores non-alphabetic characters
-- Case-insensitive input handling
+- Converts any word to its NATO phonetic representation
+- Speaks the converted words using built-in TTS (`pyttsx3`)
+- Volume control with a slider (default 50%)
+- Press **Enter** or click **Convert** to translate the word
+- Click **Speak** to hear the phonetic version
+- **Clear** button resets input and output
 
 ## 🧩 How It Works
 
-Each letter of the input is mapped to its NATO phonetic equivalent using a predefined dictionary. Only alphabetic characters are processed, and the formatted result is displayed within the GUI window.
+Each letter of the input is mapped to its NATO phonetic equivalent using a predefined dictionary. Only alphabetic characters are processed, and the formatted result is displayed within the GUI window. 
+
+## ✅ Requirements
+
+- Python 3.6+
+- `pyttsx3` for offline text-to-speech
+- Tkinter (usually included by default)
+
+
+Install required dependencies with:
+
+```bash
+pip install pyttsx3
+```
+
 
 ## 🛠️ Installation
 
@@ -38,14 +54,15 @@ Each letter of the input is mapped to its NATO phonetic equivalent using a prede
 
 ```
 NATO-Phonetic-App/
-├── nato_phonetic_alphabet_app_gui.py  # Main application script
-├── README.md                           # Project documentation
-└── LICENSE                             # Project license (MIT)
+├── nato_phonetic_alphabet_app_gui.py      # Main GUI application
+├── README.md                              # Project documentation
+└── LICENSE                                # Project license (MIT)
 ```
 
 ## 📸 Screenshot
 
-<img width="638" height="338" alt="image" src="https://github.com/user-attachments/assets/d314307c-4662-421f-818a-d23e7451dc0f" />
+<img width="502" height="362" alt="image" src="https://github.com/user-attachments/assets/a0715401-e610-4db6-a963-d3ec898ebb59" />
+
 
 ## 🗺️ NATO Phonetic Alphabet Reference
 
@@ -78,10 +95,12 @@ NATO-Phonetic-App/
 | Y      | Yankee    |
 | Z      | Zulu      |
 
-## ✅ Requirements
 
-- Python 3.x
-- Tkinter (usually included by default)
+## 🔧 Customization
+
+Speech speed: Adjust via `engine.setProperty('rate', 170)`
+
+Default volume: Set by `volume_slider.set(50)`
 
 ## 🙌 Contributing
 
