@@ -1,68 +1,104 @@
-# NATO Phonetic Alphabet App
+# 🗣️ NATO Phonetic Alphabet Converter (GUI)
 
-A simple Python GUI application that converts typed words into the NATO Phonetic Alphabet and speaks them aloud using text-to-speech.
+A Python GUI application that converts user input into the NATO Phonetic Alphabet and speaks it aloud with full control over speech playback and volume.
+
+---
 
 ## 🔤 What It Does
 
-This app takes a word entered by the user and translates each letter into its corresponding NATO phonetic alphabet word.  
-For example:  
+This app lets users enter any word or phrase and translates each letter into its NATO phonetic equivalent.  
+Then, it speaks the translation aloud using offline text-to-speech (via `pyttsx3`).
+
+> **Example:**  
 **HELLO** → `H - Hotel | E - Echo | L - Lima | L - Lima | O - Oscar`
 
-## 🔤 Features
+---
 
-- Converts any word to its NATO phonetic representation
-- Speaks the converted words using built-in TTS (`pyttsx3`)
-- Volume control with a slider (default 50%)
-- Press **Enter** or click **Convert** to translate the word
-- Click **Speak** to hear the phonetic version
-- **Clear** button resets input and output
+## ✨ Features
+
+- ✅ Converts input to NATO phonetic alphabet
+- 🗣️ Speaks results aloud using offline TTS (`pyttsx3`)
+- 🎚️ Real-time volume control (0%–100%)
+- ⏹️ Stop button interrupts speech instantly
+- ↩️ Press **Enter** or click **Convert** to process input
+- ▶️ Click **Speak** to start reading the phonetic version
+- 🧹 **Clear** resets all fields
+
+---
 
 ## 🧩 How It Works
 
-Each letter of the input is mapped to its NATO phonetic equivalent using a predefined dictionary. Only alphabetic characters are processed, and the formatted result is displayed within the GUI window. 
+1. The app maps each alphabetic character in the input to its NATO phonetic equivalent.
+2. The formatted output is displayed in the GUI.
+3. When **Speak** is pressed:
+   - Each phonetic word is spoken aloud.
+   - Volume can be adjusted in real time.
+   - If **Stop** is pressed, playback halts and resets cleanly.
+4. The next **Speak** always starts from the beginning.
 
-## ✅ Requirements
+---
+
+## 🖥️ Requirements
 
 - Python 3.6+
-- `pyttsx3` for offline text-to-speech
-- Tkinter (usually included by default)
+- [`pyttsx3`](https://pypi.org/project/pyttsx3/) for offline text-to-speech
+- `tkinter` (usually included with Python)
 
-
-Install required dependencies with:
+Install dependencies with:
 
 ```bash
 pip install pyttsx3
 ```
 
+---
 
-## 🛠️ Installation
+## 🚀 Getting Started
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/zk2138/NATO-Phonetic-App.git
-   cd NATO-Phonetic-App
-   ```
+### 1. Clone the repository
 
-2. **Run the application:**
-   ```bash
-   python nato_phonetic_alphabet_app_gui.py
-   ```
+```bash
+git clone https://github.com/zk2138/NATO-Phonetic-App.git
+cd NATO-Phonetic-App
+```
 
-> Make sure Python 3 is installed on your system. Tkinter comes pre-installed with most standard Python distributions.
+### 2. Run the application
+
+```bash
+python nato_phonetic_alphabet_app_gui.py
+```
+
+> Make sure Python 3 is installed on your system. `tkinter` is included with most standard Python distributions.
+
+---
 
 ## 📂 File Structure
 
 ```
 NATO-Phonetic-App/
-├── nato_phonetic_alphabet_app_gui.py      # Main GUI application
-├── README.md                              # Project documentation
-└── LICENSE                                # Project license (MIT)
+├── nato_phonetic_alphabet_app_gui.py   # Main GUI application
+├── README.md                           # Project documentation
+└── LICENSE                             # MIT License
 ```
+
+---
+
+## 🎛️ Interface Overview
+
+- **Input Field**: Type your word or phrase
+- **Convert**: Display NATO translation
+- **Speak**: Read out phonetics aloud
+- **Stop**: Immediately stop speaking
+- **Clear**: Reset everything
+- **Volume Slider**: Live volume adjustment
+
+---
 
 ## 📸 Screenshot
 
-<img width="502" height="362" alt="image" src="https://github.com/user-attachments/assets/a0715401-e610-4db6-a963-d3ec898ebb59" />
+<img width="502" height="452" alt="image" src="https://github.com/user-attachments/assets/9d42b191-6d56-41c1-a734-2c758f5a1439" />
 
+
+---
 
 ## 🗺️ NATO Phonetic Alphabet Reference
 
@@ -95,16 +131,35 @@ NATO-Phonetic-App/
 | Y      | Yankee    |
 | Z      | Zulu      |
 
+---
 
-## 🔧 Customization
+## ⚙️ Customization Tips
 
-Speech speed: Adjust via `engine.setProperty('rate', 170)`
+- **Speech speed**:
+  ```python
+  engine.setProperty('rate', 170)  # Adjust rate as desired
+  ```
 
-Default volume: Set by `volume_slider.set(50)`
+- **Default volume**:
+  ```python
+  volume_slider.set(50)  # Default 50% volume
+  ```
+
+---
+
+## ❗ Known Limitation
+
+- If the **Stop** button is used during speech, the next time **Speak** is clicked, playback **starts from the second letter**, skipping the first.
+- The **Speak** feature works reliably only when it can finish uninterrupted.
+
+---
 
 ## 🙌 Contributing
 
-Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements or new features.
+Contributions welcome!  
+Feel free to fork the repository and submit a pull request with improvements, bug fixes, or new features.
+
+---
 
 ## 📄 License
 
@@ -112,4 +167,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-Made with 💻 by [zk2138](https://github.com/zk2138)
+Made with ❤️ by [zk2138](https://github.com/zk2138)
