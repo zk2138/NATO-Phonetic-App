@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NATO Phonetic Converter</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 10px; margin: 10px; }
+        button { padding: 10px; }
+        #result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>NATO Phonetic Alphabet Converter</h1>
+    <input type="text" id="wordInput" placeholder="Enter a word">
+    <button onclick="convertWord()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+        function convertWord() {
+            let word = document.getElementById('wordInput').value;
+            fetch('/convert', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'word=' + encodeURIComponent(word)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+            });
+        }
+    </script>
+</body>
+</html>
